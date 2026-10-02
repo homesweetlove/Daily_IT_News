@@ -23,7 +23,7 @@ A file is added as `news/YYYY-MM-DD.md` for each collection date.
 
 Each daily document generally includes:
 
-1. 작성 time and research scope
+1. Writing time and research scope
 2. At-a-glance summary
 3. IT issues
 4. Security issues
