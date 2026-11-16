@@ -6,18 +6,31 @@ A date-based Markdown archive for **IT, AI, and security issues worth reviewing 
 
 Rather than collecting links only, the archive groups reports covering the same event when possible and records the key facts, why the issue matters, and points to watch or respond to.
 
+## Read the News / 언어 선택
+
+| Date (KST) | English | 한국어 |
+| --- | --- | --- |
+| 2026-11-16 | [Read in English](news/en/2026-11-16.md) | [한국어로 읽기](news/2026-11-16.md) |
+| 2026-11-15 | [Read in English](news/en/2026-11-15.md) | [한국어로 읽기](news/2026-11-15.md) |
+
+- [**Browse English editions**](news/en/) · [**Browse the full Korean archive**](news/)
+- English editions are provided as separate translations with the same news coverage and original source URLs. **The older archive has not yet been translated in full.** The language links appear in both editions on dates that have translations.
+- New issues and translations are currently added as Markdown files; this repository does **not** run an automatic translation or news-generation workflow.
+
 ## Repository Structure
 
 ```text
 Daily_IT_News/
 └─ news/
    ├─ 2026-09-18.md
-   ├─ 2026-09-21.md
-   ├─ 2026-09-22.md
-   └─ 2026-09-23.md
+   ├─ ...
+   ├─ 2026-11-16.md
+   └─ en/
+      ├─ 2026-11-15.md
+      └─ 2026-11-16.md
 ```
 
-A file is added as `news/YYYY-MM-DD.md` for each collection date.
+A Korean file is stored as `news/YYYY-MM-DD.md`. Available English translations use `news/en/YYYY-MM-DD.md` with the same KST date. The English edition is a translation of that date's Korean selection, not a separately researched international news roundup.
 
 ## Document Format
 
@@ -53,10 +66,12 @@ Use:
 
 ```text
 news/YYYY-MM-DD.md
+news/en/YYYY-MM-DD.md
 ```
 
 Example:
 
 ```text
-news/2026-09-23.md
+news/2026-11-16.md
+news/en/2026-11-16.md
 ```
