@@ -119,6 +119,10 @@ def translate_markdown(
         if line.lstrip().startswith(("~~~", "```")):
             inside_fence = not inside_fence
             result.append(line)
+        elif not inside_fence and f"](en/{day}.md)" in line:
+            # The Korean navigation is relative to news/, not news/en/.
+            # The English edition already receives its own correct backlink.
+            continue
         elif inside_fence or line.lstrip().startswith("<a id="):
             result.append(line)
         else:

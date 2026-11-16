@@ -14,8 +14,9 @@ Rather than collecting links only, the archive groups reports covering the same 
 | 2026-11-15 | [Read in English](news/en/2026-11-15.md) | [한국어로 읽기](news/2026-11-15.md) |
 
 - [**Browse English editions**](news/en/) · [**Browse the full Korean archive**](news/)
-- English editions are provided as separate translations with the same news coverage and original source URLs. **The older archive has not yet been translated in full.** The language links appear in both editions on dates that have translations.
-- New issues and translations are currently added as Markdown files; this repository does **not** run an automatic translation or news-generation workflow.
+- **All 50 currently archived Korean issues have matching English editions** (September 18–November 16, 2026). The full bilingual date list is in the [English archive index](news/en/README.md).
+- Older English issues were translated automatically and **have not all received professional editing**. Machine translation may distort names, technical terms, or security advice. Consult the linked primary sources before acting on a report.
+- A [GitHub Actions translation workflow](.github/workflows/translate-news.yml) generates missing or changed English editions when Korean news files are pushed to `main`. It does not collect or author news automatically. Failed workflows may require manual intervention.
 
 ## Repository Structure
 
@@ -26,7 +27,8 @@ Daily_IT_News/
    ├─ ...
    ├─ 2026-11-16.md
    └─ en/
-      ├─ 2026-11-15.md
+      ├─ 2026-09-18.md
+      ├─ ...
       └─ 2026-11-16.md
 ```
 

@@ -20,6 +20,8 @@ for original in days:
         errors.append(f"{original.stem}: omitted source URLs: {omitted}")
     if f"en/{original.name}" not in ko:
         errors.append(f"{original.stem}: missing Korean-to-English link")
+    if f"](en/{original.name})" in en:
+        errors.append(f"{original.stem}: English edition has broken self-navigation")
     if f"../{original.name}" not in en:
         errors.append(f"{original.stem}: missing English-to-Korean link")
     if not en.startswith(("# ", "<!-- source-sha256: ")):

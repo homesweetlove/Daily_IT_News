@@ -35,6 +35,16 @@ class NewsTranslationTests(unittest.TestCase):
         self.assertIn("1. https://example.com/advisory", result)
         self.assertIn("<!-- source-sha256: ", result)
 
+    def test_english_does_not_copy_korean_navigation(self):
+        source = (
+            "# 데일리 뉴스\n\n"
+            "**언어** · [Read in English](en/2026-10-01.md)\n"
+            "## 요약\n"
+        )
+        translated = translate_markdown(source, "2026-10-01", fake_translation)
+        self.assertNotIn("](en/2026-10-01.md)", translated)
+        self.assertIn("](../2026-10-01.md)", translated)
+
     def test_korean_navigation_is_idempotent(self):
         original = "# 제목\n\n본문\n"
         once = ensure_korean_link(original, "2026-10-01")

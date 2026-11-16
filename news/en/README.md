@@ -2,9 +2,10 @@
 
 [한국어 전체 목록 / Korean archive](../) · [Repository README](../../README.md)
 
+All 50 currently published Korean issues have an English companion.
 English editions preserve the original reporting dates and source links.
-Some older issues are automatically translated; technical and security advice
-should be checked against the linked primary sources.
+Older editions are automatically translated and may contain inaccurate or awkward wording;
+check the linked primary sources for names, technical details, and security advice.
 
 | Date (KST) | English | Korean |
 | --- | --- | --- |
