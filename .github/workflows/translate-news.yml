@@ -1,0 +1,56 @@
+name: Publish English news editions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'news/*.md'
+      - 'scripts/translate_news.py'
+      - '.github/workflows/translate-news.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: english-news-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install offline translation engine
+        run: python -m pip install 'argostranslate==1.11.0'
+
+      - name: Generate missing or outdated English editions
+        run: python scripts/translate_news.py
+
+      - name: Verify generated Markdown
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/check_news.py
+          git diff --check
+
+      - name: Commit and push English editions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m "Publish English translations of daily IT news"
+          git push
