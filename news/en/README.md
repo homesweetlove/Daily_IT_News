@@ -8,6 +8,7 @@ should be checked against the linked primary sources.
 
 | Date (KST) | English | Korean |
 | --- | --- | --- |
+| 2026-11-28 | [English](2026-11-28.md) | [한국어](../2026-11-28.md) |
 | 2026-11-27 | [English](2026-11-27.md) | [한국어](../2026-11-27.md) |
 | 2026-11-26 | [English](2026-11-26.md) | [한국어](../2026-11-26.md) |
 | 2026-11-25 | [English](2026-11-25.md) | [한국어](../2026-11-25.md) |
